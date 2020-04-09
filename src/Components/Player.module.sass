@@ -1,0 +1,31 @@
+$border-raius: 1vmin
+$player-size: 50vmin
+$player-y: 50%
+
+.Player
+	width: $player-size
+	height: $player-size
+	border-radius: $border-raius
+	background-image: url('../thumb.jpg')
+	background-position: center
+	background-size: cover
+
+
+	position: absolute
+	top: 50%
+	left: $player-y
+	transform: translate(-50%, -50%)
+	overflow: hidden
+	box-shadow: 0px 0px 3vmin 0vmin rgba(0,0,0,.5)
+
+.Gradient
+	position: absolute
+	top: 50%
+	left: $player-y
+	transform: translate(-50%, -50%)
+	width: $player-size
+	height: $player-size
+	border-radius: $border-raius
+	overflow: hidden
+
+	background: radial-gradient(50% 50% at 50% 50%, rgba(17, 16, 27, 0.17) 15.1%, rgba(17, 16, 27, 0.8) 61.98%, #11101B 100%)

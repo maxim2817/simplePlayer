@@ -1,0 +1,36 @@
+.Btns {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 100%;
+	height: 10vmin;
+
+	.btn {
+		position: absolute;
+		top: 50%;
+		width: 5vmin;
+		cursor: pointer;
+		display: inline-block;
+	}
+
+	.prev {
+		left: 50%;
+		transform: translate(-210%, -20%);
+	}
+
+	.main {
+		left: 50%;
+		transform: translate(-50%, -20%);
+	}
+
+	.Paused {}
+
+	.noPaused {}
+
+	.next {
+		left: 50%;
+		transform: translate(110%, -20%);
+	}
+
+}
