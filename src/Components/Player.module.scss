@@ -1,0 +1,106 @@
+$border-raius: 1vmin;
+$player-size: 50vmin;
+$player-y: 50%;
+$dark: #11101B;
+$white: #D9D8EB;
+$small: 320px;
+$large: 1024px;
+
+@mixin respond-to($media) {
+	@if $media == handhelds {
+		@media only screen and (max-width: $small) { @content; }
+	}
+	@else if $media == medium-screens {
+		@media only screen and (min-width: $small + 1) and (max-width: $large - 1) { @content; }
+	}
+	@else if $media == wide-screens {
+		@media only screen and (min-width: $large) { @content; }
+	}
+}
+
+.Player {
+	width: $player-size;
+	height: $player-size;
+	border-radius: $border-raius;
+	background-image: url('../thumb.jpg');
+	background-position: center;
+	background-size: cover;
+
+
+	position: absolute;
+	top: 50%;
+	left: $player-y;
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+	box-shadow: 0px 0px 3vmin 0vmin rgba(0,0,0,.5);
+}
+.Gradient {
+	position: absolute;
+	top: 50%;
+	left: $player-y;
+	transform: translate(-50%, -50%);
+	width: $player-size;
+	height: $player-size;
+	border-radius: $border-raius;
+	overflow: hidden;
+
+	background: radial-gradient(50% 50% at 50% 50%, rgba(17, 16, 27, 0.17) 15.1%, rgba(17, 16, 27, 0.8) 61.98%, $dark 100%);
+}
+.SongName {
+	position: absolute;
+	top: 9vmin;
+	background-color: $dark;
+	font-weight: bold;
+	font-size: 2.5vmin;
+	color: $white;
+	width: auto;
+	padding-left: 2vmin;
+	padding-right: 2vmin;
+	text-align: center;
+	line-height: 6vmin;
+	border-radius: $border-raius;
+	height: 6vmin;
+	box-shadow: 0px 0px 3vmin 0vmin rgba(0,0,0,.3);
+	left: $player-y;
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+
+	@include respond-to(medium-screens) { font-size: 3vmin; width: 25vmin; height: 6vmin; }
+	@include respond-to(wide-screens) { font-size: 2.5vmin; }
+}
+.Btns {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 100%;
+	height: 10vmin;
+
+	.btn {
+		position: absolute;
+		top: 50%;
+		width: 5vmin;
+		cursor: pointer;
+		display: inline-block;
+	}
+
+	.prev {
+		left: 50%;
+		transform: translate(-210%, -20%);
+	}
+
+	.main {
+		left: 50%;
+		transform: translate(-50%, -20%);
+	}
+
+	.Paused {}
+
+	.noPaused {}
+
+	.next {
+		left: 50%;
+		transform: translate(110%, -20%);
+	}
+
+}
