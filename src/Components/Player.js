@@ -10,7 +10,8 @@ class Player extends React.Component {
 	state = {
 		song_names: ['Brianstorm', 'Teddy Picker'],
 		songs_durations: ['02:52','02:45'],
-		songIndex: 1,
+		songIndex: 0,
+		autoRepeat: false,
 		isPaused: true,
 	}
 	constructor(props) {
@@ -19,11 +20,19 @@ class Player extends React.Component {
 
 		this.audio = new Audio(this.songs[this.state.songIndex]);
 		// this.audio.volume = .1;
-		this.audio.currentTime = 160;
+		this.audio.currentTime = 168;
 
 		this.audio.onended = ()=>{
 			this.audio.currentTime = 0;
-			this.audio.play();
+			// this.state.isPaused = true;
+			if (this.state.autoRepeat) {
+				this.audio.play();
+			} else {
+				this.setState({isPaused: true});
+			}
+
+			// this.audio.play();
+			// this.state.isPaused = !this.state.isPaused;
 			// console.log(this.audio);
 		};
 		this.audio.ontimeupdate = ()=>{
@@ -36,14 +45,17 @@ class Player extends React.Component {
 	// 02:45
 	// Converting 01:59 format to seconds only format
 	// max_dur = +props.max_dur.slice(0, 2)*60 + +props.max_dur.slice(3, 5);
-
-	// componentDidMount() {
-	// 	for (var key in this.audio) {
-	// 		if (typeof this.audio[key] === "number") {
-	// 			console.log(key);
-	// 		}
-	// 	}
-	// }
+	componentDidUpdate() {
+		console.log('Upd');
+	}
+	componentDidMount() {
+		console.log('Mount');
+		// for (var key in this.audio) {
+		// 	if (typeof this.audio[key] === "number") {
+		// 		console.log(key);
+		// 	}
+		// }
+	}
 
 	addIndex(songIndexOld) {
 		this.setState({songIndex: songIndexOld++})
@@ -69,7 +81,7 @@ class Player extends React.Component {
 
 
 						<Pause
-							max_dur={this.audio.duration}
+							// max_dur={this.audio.duration}
 							onClick={()=>this.setPause(this.state.isPaused)}
 							isPaused={this.state.isPaused}
 							audio={this.audio}
