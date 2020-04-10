@@ -11,8 +11,15 @@ export default props => {
 	}
 
 	return (
-		<div onClick={props.onClick} className={classes.btn + ' ' + classes.Paused + ' ' + classes.main}>
-			{props.isPaused ? <img src={svg_play} alt="#"/> : <img src={svg_pause} alt="#"/>}
+		<div
+			onClick={props.onClick}
+			className={classes.btn + ' ' + classes.Paused + ' ' + classes.main}
+		>
+			{
+				props.isPaused ?
+					<img src={svg_play} alt="#"/> :
+					<img src={svg_pause} alt="#"/>
+			}
 		</div>
 	);
 }

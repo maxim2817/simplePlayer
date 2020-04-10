@@ -20,7 +20,7 @@ class Player extends React.Component {
 
 		this.audio = new Audio(this.songs[this.state.songIndex]);
 		// this.audio.volume = .1;
-		this.audio.currentTime = 168;
+		this.audio.currentTime = 0;
 
 		this.audio.onended = ()=>{
 			this.audio.currentTime = 0;
