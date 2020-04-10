@@ -5,11 +5,11 @@ import song1 from './songs/Brianstorm.mp3';
 import song2 from './songs/TeddyPicker.mp3';
 import svg_prev from '../prev.svg';
 import svg_next from '../next.svg';
-import { render } from '@testing-library/react';
 
 class Player extends React.Component {
 	state = {
 		song_names: ['Brianstorm', 'Teddy Picker'],
+		songs_durations: ['02:52','02:45'],
 		songIndex: 1,
 		isPaused: true,
 	}
@@ -18,8 +18,24 @@ class Player extends React.Component {
 		this.songs = [song1, song2];
 
 		this.audio = new Audio(this.songs[this.state.songIndex]);
-		this.audio.volume = 1;
+		// this.audio.volume = .1;
+		this.audio.currentTime = 160;
+
+		this.audio.onended = ()=>{
+			this.audio.currentTime = 0;
+			this.audio.play();
+			// console.log(this.audio);
+		};
+		this.audio.ontimeupdate = ()=>{
+			// vm.generateTime();
+			// console.log(this.audio);
+		};
 	}
+
+	// 145.59989
+	// 02:45
+	// Converting 01:59 format to seconds only format
+	// max_dur = +props.max_dur.slice(0, 2)*60 + +props.max_dur.slice(3, 5);
 
 	// componentDidMount() {
 	// 	for (var key in this.audio) {
@@ -52,7 +68,13 @@ class Player extends React.Component {
 						</div>
 
 
-						<Pause onClick={()=>this.setPause(this.state.isPaused)} isPaused={this.state.isPaused} audio={this.audio} className={classes.btn + ' ' + classes.Paused + ' ' + classes.main}/>
+						<Pause
+							max_dur={this.audio.duration}
+							onClick={()=>this.setPause(this.state.isPaused)}
+							isPaused={this.state.isPaused}
+							audio={this.audio}
+							className={classes.btn + ' ' + classes.Paused + ' ' + classes.main}
+						/>
 
 
 						<div className={classes.btn + ' ' + classes.next}>
