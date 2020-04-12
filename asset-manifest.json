@@ -1,30 +1,30 @@
 {
   "files": {
-    "main.css": "/player/static/css/main.b118c38f.chunk.css",
-    "main.js": "/player/static/js/main.11b765a9.chunk.js",
-    "main.js.map": "/player/static/js/main.11b765a9.chunk.js.map",
-    "runtime-main.js": "/player/static/js/runtime-main.a97dc129.js",
-    "runtime-main.js.map": "/player/static/js/runtime-main.a97dc129.js.map",
-    "static/js/2.bce1cd79.chunk.js": "/player/static/js/2.bce1cd79.chunk.js",
-    "static/js/2.bce1cd79.chunk.js.map": "/player/static/js/2.bce1cd79.chunk.js.map",
-    "index.html": "/player/index.html",
-    "precache-manifest.a9b76da54ec77ea77de61dc8a0990ded.js": "/player/precache-manifest.a9b76da54ec77ea77de61dc8a0990ded.js",
-    "service-worker.js": "/player/service-worker.js",
-    "static/css/main.b118c38f.chunk.css.map": "/player/static/css/main.b118c38f.chunk.css.map",
-    "static/js/2.bce1cd79.chunk.js.LICENSE.txt": "/player/static/js/2.bce1cd79.chunk.js.LICENSE.txt",
-    "static/media/Brianstorm.mp3": "/player/static/media/Brianstorm.60c83159.mp3",
-    "static/media/TeddyPicker.mp3": "/player/static/media/TeddyPicker.78281cd8.mp3",
-    "static/media/git.svg": "/player/static/media/git.1bb02710.svg",
-    "static/media/next.svg": "/player/static/media/next.d8914c90.svg",
-    "static/media/pause.svg": "/player/static/media/pause.80e250eb.svg",
-    "static/media/play.svg": "/player/static/media/play.061d845f.svg",
-    "static/media/prev.svg": "/player/static/media/prev.2cbac354.svg",
-    "static/media/Player.module.scss": "/player/static/media/thumb.673d6e75.jpg"
+    "main.css": "/simplePlayer/static/css/main.1872e437.chunk.css",
+    "main.js": "/simplePlayer/static/js/main.cec48d12.chunk.js",
+    "main.js.map": "/simplePlayer/static/js/main.cec48d12.chunk.js.map",
+    "runtime-main.js": "/simplePlayer/static/js/runtime-main.a3e3b4fb.js",
+    "runtime-main.js.map": "/simplePlayer/static/js/runtime-main.a3e3b4fb.js.map",
+    "static/js/2.bce1cd79.chunk.js": "/simplePlayer/static/js/2.bce1cd79.chunk.js",
+    "static/js/2.bce1cd79.chunk.js.map": "/simplePlayer/static/js/2.bce1cd79.chunk.js.map",
+    "index.html": "/simplePlayer/index.html",
+    "precache-manifest.cc315bbe3a5321f44fcb2e4ec5689525.js": "/simplePlayer/precache-manifest.cc315bbe3a5321f44fcb2e4ec5689525.js",
+    "service-worker.js": "/simplePlayer/service-worker.js",
+    "static/css/main.1872e437.chunk.css.map": "/simplePlayer/static/css/main.1872e437.chunk.css.map",
+    "static/js/2.bce1cd79.chunk.js.LICENSE.txt": "/simplePlayer/static/js/2.bce1cd79.chunk.js.LICENSE.txt",
+    "static/media/Brianstorm.mp3": "/simplePlayer/static/media/Brianstorm.60c83159.mp3",
+    "static/media/TeddyPicker.mp3": "/simplePlayer/static/media/TeddyPicker.78281cd8.mp3",
+    "static/media/git.svg": "/simplePlayer/static/media/git.1bb02710.svg",
+    "static/media/next.svg": "/simplePlayer/static/media/next.d8914c90.svg",
+    "static/media/pause.svg": "/simplePlayer/static/media/pause.80e250eb.svg",
+    "static/media/play.svg": "/simplePlayer/static/media/play.061d845f.svg",
+    "static/media/prev.svg": "/simplePlayer/static/media/prev.2cbac354.svg",
+    "static/media/Player.module.scss": "/simplePlayer/static/media/thumb.673d6e75.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.a97dc129.js",
+    "static/js/runtime-main.a3e3b4fb.js",
     "static/js/2.bce1cd79.chunk.js",
-    "static/css/main.b118c38f.chunk.css",
-    "static/js/main.11b765a9.chunk.js"
+    "static/css/main.1872e437.chunk.css",
+    "static/js/main.cec48d12.chunk.js"
   ]
 }
