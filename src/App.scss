@@ -1,31 +1,13 @@
-$small: 320px;
-$large: 1024px;
-
-@mixin respond-to($media) {
-	@if $media == handhelds {
-		@media only screen and (max-width: $small) { @content; }
-	}
-	@else if $media == medium-screens {
-		@media only screen and (min-width: $small + 1) and (max-width: $large - 1) { @content; }
-	}
-	@else if $media == wide-screens {
-		@media only screen and (min-width: $large) { @content; }
-	}
-}
 
 body {
   background-color: #D9D8EB;
 }
 
 .github {
-  width: 2.5vw; height: 2.5vw;
+  width: 30px; height: 30px;
+  bottom: 20px; right: 20px;
   position: absolute;
-  bottom: 2vmin;
-  right: 2vmin;
   border-radius: 50%;
-
-  @include respond-to(medium-screens) {width: 3vw; height: 3vw;}
-	@include respond-to(wide-screens) {width: 2.5vw; height: 2.5vw;}
 }
 .github a {
   border-radius: 50%;
