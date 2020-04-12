@@ -104,3 +104,9 @@ $large: 1024px;
 	}
 
 }
+
+.entering, .exiting {
+	transition: all 300ms;
+	width: 49.5vmin;
+	height: 49.5vmin;
+}

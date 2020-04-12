@@ -14,10 +14,6 @@ let tracks = {
 	songs: [song1, song2, song3]
 };
 
-const defaultStyle = {
-	transition: `opacity ${300}ms ease-in-out`,
-	opacity: 0,
-}
 
 class Player extends React.Component {
 	state = {
@@ -25,12 +21,15 @@ class Player extends React.Component {
 		autoRepeat: false,
 		playlistRepeat: true,
 		isPaused: true,
+		inProp: true
 	}
 	constructor(props) {
+
 		super(props);
 
+		this.wrapper = React.createRef();
 		this.audio = new Audio(tracks.songs[this.state.songIndex]);
-		this.audio.volume = .05;
+		this.audio.volume = .01;
 		this.audio.currentTime = 0;
 
 
@@ -64,18 +63,17 @@ class Player extends React.Component {
 		};
 	}
 	componentDidUpdate(prevProps, prevState) {
-		// if (this.state.songIndex !== prevState.songIndex) {
-		// 	console.log(`Prev song: ${prevState.songIndex} Current song: ${this.state.songIndex}`);
-		// }
-
-		// animate
+		// this.setState({inProp: !this.state.inProp});
 	}
 	componentDidMount() {
 		console.log('Mounted');
 	}
 
 	songSwitchAnimate() {
-
+		this.setState({inProp: !this.state.inProp});
+		// setTimeout(()=>{
+		// 	this.setState({inProp: !this.state.inProp});
+		// },600);
 	}
 	nextSong() {
 		this.audio.currentTime = 0;
@@ -88,7 +86,6 @@ class Player extends React.Component {
 				this.setState({songIndex: this.state.songIndex+1});
 				this.audio.src = tracks.songs[this.state.songIndex+1];
 			}
-			this.songSwitchAnimate();
 		} else {
 			if (this.state.songIndex !== tracks.songs.length-1) {
 				this.setState({songIndex: this.state.songIndex+1});
@@ -96,6 +93,7 @@ class Player extends React.Component {
 				this.audio.play();
 			}
 		}
+		this.songSwitchAnimate();
 	}
 	prevSong() {
 		this.audio.currentTime = 0;
@@ -114,8 +112,8 @@ class Player extends React.Component {
 				this.setState({songIndex: this.state.songIndex-1});
 				this.audio.src = tracks.songs[this.state.songIndex-1];
 			}
-			this.songSwitchAnimate();
 		}
+		this.songSwitchAnimate();
 	}
 	setPause() {
 		this.setState({isPaused: !this.state.isPaused})
@@ -124,12 +122,11 @@ class Player extends React.Component {
 	render(){
 		return (
 			<div>
-				<Transition
-
-				>
+				<Transition in={this.state.inProp} timeout={300}>
+				{state => (
 					<div>
-						<div className={classes.Player}></div>
-						<div className={classes.Gradient}>
+						<div  className={classes.Player + ' ' + classes[state]}></div>
+						<div className={classes.Gradient + ' ' + classes[state]}>
 							<div className={classes.Btns}>
 								<div
 									onClick={()=>this.prevSong()}
@@ -140,8 +137,10 @@ class Player extends React.Component {
 
 
 								<Pause
-									// max_dur={this.audio.duration}
-									onClick={()=>this.setPause(this.state.isPaused)}
+									onClick={()=>{
+										this.setPause(this.state.isPaused);
+										this.songSwitchAnimate();
+									}}
 									isPaused={this.state.isPaused}
 									audio={this.audio}
 									className={classes.btn + ' ' + classes.Paused + ' ' + classes.main}
@@ -157,6 +156,7 @@ class Player extends React.Component {
 							</div>
 						</div>
 					</div>
+				)}
 				</Transition>
 
 				<div className={classes.SongName}>
