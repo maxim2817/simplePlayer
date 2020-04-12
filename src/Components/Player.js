@@ -3,23 +3,24 @@ import classes from './Player.module.scss';
 import Pause from './Pause.js';
 import song1 from './songs/Brianstorm.mp3';
 import song2 from './songs/TeddyPicker.mp3';
+import song3 from './songs/DisforDangerous.mp3';
 import svg_prev from '../prev.svg';
 import svg_next from '../next.svg';
 
 class Player extends React.Component {
 	state = {
-		song_names: ['Brianstorm', 'Teddy Picker'],
-		songs_durations: ['02:52','02:45'],
+		song_names: ['Brianstorm', 'Teddy Picker', 'D is for Dangerous'],
+		songs_durations: ['02:52','02:45', '02:00'],
 		songIndex: 0,
 		autoRepeat: false,
 		isPaused: true,
 	}
 	constructor(props) {
 		super(props);
-		this.songs = [song1, song2];
+		this.songs = [song1, song2, song3];
 
 		this.audio = new Audio(this.songs[this.state.songIndex]);
-		// this.audio.volume = .1;
+		this.audio.volume = .05;
 		this.audio.currentTime = 0;
 
 		this.audio.onended = ()=>{
@@ -45,26 +46,39 @@ class Player extends React.Component {
 	// 02:45
 	// Converting 01:59 format to seconds only format
 	// max_dur = +props.max_dur.slice(0, 2)*60 + +props.max_dur.slice(3, 5);
-	componentDidUpdate() {
-		console.log('Upd');
+	componentDidUpdate(prevProps, prevState) {
+		if (this.state.songIndex !== prevState.songIndex) {
+			console.log(`Prev song: ${prevState.songIndex} Current song: ${this.state.songIndex}`);
+		}
 	}
 	componentDidMount() {
-		console.log('Mount');
-		// for (var key in this.audio) {
-		// 	if (typeof this.audio[key] === "number") {
-		// 		console.log(key);
-		// 	}
-		// }
+		console.log('Mounted');
 	}
 
-	addIndex(songIndexOld) {
-		this.setState({songIndex: songIndexOld++})
+	nextSong() {
+		this.audio.currentTime = 0;
+
+		if (this.state.songIndex === this.songs.length-1) {
+			this.setState({songIndex: 0});
+			this.audio.src = this.songs[0];
+		} else {
+			this.setState({songIndex: this.state.songIndex+1});
+			this.audio.src = this.songs[this.state.songIndex+1];
+		}
 	}
-	remIndex(songIndexOld) {
-		this.setState({songIndex: songIndexOld--})
+	prevSong() {
+		this.audio.currentTime = 0;
+
+		if (this.state.songIndex === 0) {
+			this.setState({songIndex: this.songs.length-1});
+			this.audio.src = this.songs[this.songs.length-1];
+		} else {
+			this.setState({songIndex: this.state.songIndex-1});
+			this.audio.src = this.songs[this.state.songIndex-1];
+		}
 	}
-	setPause(isPausedOld) {
-		this.setState({isPaused: !isPausedOld})
+	setPause() {
+		this.setState({isPaused: !this.state.isPaused})
 	}
 
 	// audio.currentTime = (maxduration * percentage) / 100;
@@ -75,7 +89,10 @@ class Player extends React.Component {
 				<div className={classes.Player}></div>
 				<div className={classes.Gradient}>
 					<div className={classes.Btns}>
-						<div className={classes.btn + ' ' + classes.prev}>
+						<div
+							onClick={()=>this.prevSong()}
+							className={classes.btn + ' ' + classes.prev}
+						>
 							<img src={svg_prev} alt="#"/>
 						</div>
 
@@ -89,11 +106,15 @@ class Player extends React.Component {
 						/>
 
 
-						<div className={classes.btn + ' ' + classes.next}>
+						<div
+							onClick={()=>this.nextSong()}
+							className={classes.btn + ' ' + classes.next}
+						>
 							<img src={svg_next} alt="#"/>
 						</div>
 					</div>
 				</div>
+
 				<div className={classes.SongName}>
 					{this.state.song_names[this.state.songIndex]}
 				</div>

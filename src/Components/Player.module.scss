@@ -65,7 +65,7 @@ $large: 1024px;
 	transform: translate(-50%, -50%);
 	overflow: hidden;
 
-	@include respond-to(medium-screens) { font-size: 3vmin; width: 25vmin; height: 6vmin; }
+	@include respond-to(medium-screens) { font-size: 3vmin; height: 6vmin; }
 	@include respond-to(wide-screens) { font-size: 2.5vmin; }
 }
 .Btns {
