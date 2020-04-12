@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "b38ec07a33d65ef654a04ab5fbabe657",
+    "revision": "63b476942c609e21ddf883cb5b77a860",
     "url": "/simplePlayer/index.html"
   },
   {
-    "revision": "ca9826f9429c0e8ecfc2",
-    "url": "/simplePlayer/static/css/main.5ca30366.chunk.css"
+    "revision": "9d67213b69fb085913dd",
+    "url": "/simplePlayer/static/css/main.a98065b2.chunk.css"
   },
   {
     "revision": "592a0222adec35e48f3e",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/simplePlayer/static/js/2.a039136a.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "ca9826f9429c0e8ecfc2",
-    "url": "/simplePlayer/static/js/main.0c4af191.chunk.js"
+    "revision": "9d67213b69fb085913dd",
+    "url": "/simplePlayer/static/js/main.55a78b81.chunk.js"
   },
   {
     "revision": "da97d442fbc4fbb5416b",
