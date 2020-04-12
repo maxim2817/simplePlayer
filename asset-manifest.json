@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/simplePlayer/static/css/main.c9f97bc7.chunk.css",
+    "main.css": "/simplePlayer/static/css/main.d331b69f.chunk.css",
     "main.js": "/simplePlayer/static/js/main.cec48d12.chunk.js",
     "main.js.map": "/simplePlayer/static/js/main.cec48d12.chunk.js.map",
     "runtime-main.js": "/simplePlayer/static/js/runtime-main.a3e3b4fb.js",
@@ -8,9 +8,9 @@
     "static/js/2.bce1cd79.chunk.js": "/simplePlayer/static/js/2.bce1cd79.chunk.js",
     "static/js/2.bce1cd79.chunk.js.map": "/simplePlayer/static/js/2.bce1cd79.chunk.js.map",
     "index.html": "/simplePlayer/index.html",
-    "precache-manifest.6846f214abdb12f9d413e225771767de.js": "/simplePlayer/precache-manifest.6846f214abdb12f9d413e225771767de.js",
+    "precache-manifest.b89505de3f24bf8fda6c22ffb610a963.js": "/simplePlayer/precache-manifest.b89505de3f24bf8fda6c22ffb610a963.js",
     "service-worker.js": "/simplePlayer/service-worker.js",
-    "static/css/main.c9f97bc7.chunk.css.map": "/simplePlayer/static/css/main.c9f97bc7.chunk.css.map",
+    "static/css/main.d331b69f.chunk.css.map": "/simplePlayer/static/css/main.d331b69f.chunk.css.map",
     "static/js/2.bce1cd79.chunk.js.LICENSE.txt": "/simplePlayer/static/js/2.bce1cd79.chunk.js.LICENSE.txt",
     "static/media/Brianstorm.mp3": "/simplePlayer/static/media/Brianstorm.60c83159.mp3",
     "static/media/TeddyPicker.mp3": "/simplePlayer/static/media/TeddyPicker.78281cd8.mp3",
@@ -24,7 +24,7 @@
   "entrypoints": [
     "static/js/runtime-main.a3e3b4fb.js",
     "static/js/2.bce1cd79.chunk.js",
-    "static/css/main.c9f97bc7.chunk.css",
+    "static/css/main.d331b69f.chunk.css",
     "static/js/main.cec48d12.chunk.js"
   ]
 }
