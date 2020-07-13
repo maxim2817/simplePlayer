@@ -29,7 +29,7 @@ class Player extends React.Component {
 
 		this.wrapper = React.createRef();
 		this.audio = new Audio(tracks.songs[this.state.songIndex]);
-		this.audio.volume = .01;
+		this.audio.volume = 1;
 		this.audio.currentTime = 0;
 
 
