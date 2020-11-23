@@ -20,6 +20,12 @@ let Logo = styled.div`
     width: 100%;
     height: 100%;
   }
+  transition: all 0.2s;
+
+  &:hover {
+    width: 32px;
+    height: 32px;
+  }
 `;
 
 const GitLogo = () => {
